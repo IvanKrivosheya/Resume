@@ -1,0 +1,16 @@
+<div>
+    {{#with bio}}
+        <header>
+            <section>
+                <div>
+                    {{> title data ="Bio" big=true}}
+                </div>
+                <em>{{name}} | {{birthdate}} | {{birthplace}}</em>
+                <em>{{deathdate}} | {{deathplace}}</em>
+                <em>{{nationality}} | {{occupation}}</em>
+                <em>{{known_for}}</em>
+                <em>{{education}}</em>
+            </section>
+        </header>
+    {{/with}}
+</div>
