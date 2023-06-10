@@ -1,0 +1,98 @@
+<div>
+    {{!-- {{#with bio}} --}}
+    <section>
+        <div>
+            <h1>{{name}}</h1>
+            <h3>({{birthdate}}) - ({{deathdate}})</h3>
+            <h3>{{deathplace}}</h3>
+            <h3>{{nationality}}</h3>
+            <h3>{{occupation}}</h3>
+            <hr>
+            <br>
+            {{>title data='Known for'}}
+            <ul>
+                <li>{{known_for}}</li>
+            </ul>
+
+
+            {{#each education}}
+            {{>title data='Education'}}
+            <ul>
+                <li>{{degree}}</li>
+                <li>{{field}}</li>
+                <li>{{institution}}</li>
+                <li>{{year}}</li>
+            </ul>
+            {{/each}}
+            <hr>
+            <br>
+            {{#each notable_publications}}
+            {{>title data='Notable publications'}}
+            <ul>
+                <li>{{title}}</li>
+                <li>{{year}}</li>
+                <li>{{publisher}}</li>
+            </ul>
+            {{/each}}
+            <hr>
+            <br>
+            {{>title data='Partners'}}
+            {{#each partners}}
+
+            <ul>
+                <li>{{name}}</li>
+                <li>{{relationship}}</li>
+                <li>{{years}}</li>
+            </ul>
+            {{/each}}
+            <hr>
+            <br>
+            {{#each awards}}
+            {{>title data='Awards'}}
+            <ul>
+                <li>{{title}}</li>
+                <li>{{year}}</li>
+                <li>{{description}}</li>
+            </ul>
+            {{/each}}
+            <hr>
+            <br>
+            {{>title data='Influences'}}
+            <ul>
+                <li>{{influences}}</li>
+            </ul>
+            {{>title data='Influenced'}}
+            <ul>
+                <li>{{influenced}}</li>
+            </ul>
+            {{>title data='Quotes'}}
+            <ul>
+                <li>{{quotes}}</li>
+            </ul>
+            <hr>
+            <br>
+            {{#each major_discoveries}}
+            {{>title data='Major discoveries'}}
+            <ul>
+                <li>{{title}}</li>
+                <li>{{year}}</li>
+                <li>{{description}}</li>
+            </ul>
+            {{/each}}
+            <hr>
+            <br>
+            {{>title data='Contributions'}}
+            {{#each contributions}}
+
+            <ul>
+                <li>{{this}}</li>
+            </ul>
+            {{/each}}
+            <hr>
+            <br>
+        </div>
+    </section>
+
+
+    {{!-- {{/with}} --}}
+</div>
