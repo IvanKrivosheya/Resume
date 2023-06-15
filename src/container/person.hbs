@@ -1,5 +1,4 @@
 <div>
-<hr>
   {{#with person}}
     <header>
         <section>
@@ -128,7 +127,13 @@
                                                                                             
                                                                                         </ul>
                                                                                         {{> title data="Team members" big=false}}
-                                                                                        <ul></ul>
+                                                                                        <ul>
+                                                                                            {{#each team_members}}
+                                                                                                <li>
+                                                                                                    {{name}} | {{title}}
+                                                                                                </li>
+                                                                                            {{/each}}
+                                                                                        </ul>
                                                                                     </li>
                                                                                 {{/each}}
                                                                             </ul>
