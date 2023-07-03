@@ -1,0 +1,91 @@
+{{#with program}}
+  {{#with excursion}}
+    <main>
+      <section>
+        {{>title data='Excursion' big=true}}
+        <div>
+          <em>{{name}}</em>
+        </div>
+        <br>
+        <div>
+          {{#with location}}
+            <div>
+              <b>{{city}}</b>
+              <br>
+              <b>{{country}}</b>
+            </div>
+          {{/with}}
+        </div>
+        <div>
+          <section>
+            <div>
+              <em>({{date}})</em>
+            </div>
+          </section>
+        </div>
+        <hr>
+        <div>
+          <section>
+            <div>
+              <ul>
+                {{#each program}}
+                  <li>
+                    <div>{{name}} || {{type}} <b>Duration</b> - ({{duration}})</div>
+                    {{#with details}}
+                      <ul>
+                        <br>
+                        {{#with museum}}
+                          <li>{{name}}</li>
+                          <div>
+                            <ul>
+                              {{#with location}}
+                                <li>{{address}}</li>
+                                <li>{{city}}</li>
+                                <li>{{country}}</li>
+                              {{/with}}
+                            </ul>
+                          </div>
+                          <div>
+                            <ul>
+                              {{#each exhibits}}
+                                  <li>
+                                      <div>
+                                          {{name}}
+                                      </div>
+                                      <div>
+                                          {{#if artist}}
+                                              <p>({{artist}})</p>
+                                          {{/if}}
+                                      </div>
+                                      <div>
+                                          <p>{{description}}</p>
+                                      </div>
+                                      <div>
+                                          {{#if audio_guide}}
+                                              <p>Audio guide</p>
+                                          {{/if}}
+                                      </div>
+                                  </li>
+                              {{/each}}
+                            </ul>
+                          </div>
+                        {{/with}}
+                        {{#with guide}}
+                          <div>
+                            <b>{{name}}</b>
+                            Language - <b>({{language}})</b>
+                            Rating - <b>({{rating}})</b>
+                          </div>
+                        {{/with}}
+                      </ul>
+                    {{/with}}
+                  </li>
+                {{/each}}
+              </ul>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  {{/with}}
+{{/with}}
