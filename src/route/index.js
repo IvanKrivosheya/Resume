@@ -504,7 +504,7 @@ router.get('/program', function (req, res) {
   res.render('program', {
 
 
-	layout: 'person',
+	layout: 'program',
 
 	page: {
 		title: 'Resume | Program',
