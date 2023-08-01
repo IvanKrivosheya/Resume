@@ -1,0 +1,72 @@
+<div>
+  <section>
+    <div>
+      <h2>{{name}}</h2>
+      <p class='badge text-bg-dark'>{{description}} - ОПИС</p>
+    </div>
+    {{#with history}}
+      <div>
+        <p class='badge text-bg-info'>{{year}} - РІК</p>
+        <p class='badge text-bg-info'>{{founder}}- ВІДКРИВАЧ</p>
+      </div>
+    {{/with}}
+  </section>
+  <hr />
+  <section>
+    <ul>
+      {{#each type}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+    <hr />
+    <br />
+    {{> title data="Syntax" big=false}}
+        <br>
+        {{#with syntax}}
+            <div>
+                <p class="badge rounded-pill text-bg-info">{{variables}}</p>
+                <p class="badge rounded-pill text-bg-info">{{functions}}</p>
+                <p class="badge rounded-pill text-bg-info">{{conditionals}}</p>
+                <p class="badge rounded-pill text-bg-info">{{loops}}</p>
+                <p class="badge rounded-pill text-bg-info">{{classes}}</p>
+            </div>
+        {{/with}}
+    <hr>
+    <br>
+    {{> title data="Features" big=false}}
+      <br>
+      <ul>
+        {{#each features}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    <hr>
+    {{> title data="Libraries" big=false}}
+    <br>
+    <ul class="breadcrumb">
+      {{#each libraries}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+    <br>
+    {{> title data="Tools" big=false}}
+      <ul>
+        {{#each tools}}
+          <li>
+            <button class="btn btn-danger btn-sm">{{tools}}</button>
+          </li>
+        {{/each}}
+      </ul>
+    <br>
+    {{> title data="Community" big=false}}
+      <ul>
+        {{#each community}}
+          <li>
+            <button class="btn btn-outline-secondary btn-sm">{{name}}</button>
+            <br>
+            <h5>{{type}}</h5>
+          </li>
+        {{/each}}
+      </ul>
+  </section>
+</div>
