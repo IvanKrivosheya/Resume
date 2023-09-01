@@ -1,0 +1,79 @@
+<div>
+  <main>
+    <section>
+      <h2><span class="badge bg-secondary">{{name}}</span><h2>
+      <bh>
+    </section>
+    <hr>
+    <section>
+        
+        {{#each users}}
+            <h3><span class="badge bg-secondary">Users</span></h3>
+            <br>
+            <hr>    
+            <div>
+                
+                <p class="badge text-bg-dark">ID - {{id}}</p>
+                <p class="badge text-bg-dark">Name - {{name}}</p>
+                <p class="badge text-bg-dark">Gender - {{gender}}</p>
+                <p class="badge text-bg-dark">Age - {{age}}</p>
+                <p class="badge text-bg-dark">Friends - {{friends}}</p>
+                
+                {{#each friends}}
+                    <br>
+                    <h3><span class="badge bg-secondary">Friends</span></h3>
+                    <hr>
+                    <br>
+                    <p class="badge text-bg-dark">ID - {{id}}</p>
+                    <p class="badge text-bg-dark">Name - {{name}}</p>
+                    <p class="badge text-bg-dark">Gender - {{gender}}</p>
+                    <p class="badge text-bg-dark">Age - {{age}}</p>     
+                    <br>
+                    <h3><span class="badge bg-secondary">Mutual friends</span></h3>
+                    <hr>
+                    <br>
+                        {{#each mutual_friends}}
+                            <div>
+                                <p class="badge text-bg-dark">ID - {{id}}</p>
+                                <p class="badge text-bg-dark">Name - {{name}}</p>
+                                <p class="badge text-bg-dark">Gender - {{gender}}</p>
+                                <p class="badge text-bg-dark">Age - {{age}}</p>
+                                <div>
+                                    <hr>
+                                    <h4><span class="badge bg-secondary">Mutual friends</span></h4>
+                                    <hr>
+                                    {{#each mutual_friends}}
+                                        <p class="badge text-bg-dark">ID - {{id}}</p>
+                                        <p class="badge text-bg-dark">Name - {{name}}</p>
+                                        <p class="badge text-bg-dark">Gender - {{gender}}</p>
+                                        <p class="badge text-bg-dark">Age - {{age}}</p>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        {{/each}}
+                {{/each}}
+            </div>
+            
+            {{#each groups}}
+            <br>
+            <hr>
+            <h3><span class="badge bg-secondary">Groups</span></h3>
+            <hr>
+            <div>
+                <p class="badge text-bg-dark">ID - {{id}}</p>
+                <span class="badge text-bg-dark">Name - {{name}}</span>
+                <span class="badge text-bg-dark">Description - {{description}}</span>
+                <h4><span class="badge bg-secondary">Members</span></h4>
+                {{#each members}}
+                    <span class="badge text-bg-dark">ID - {{id}}</span>
+                    <span class="badge text-bg-dark">Name - {{name}}</span>
+                    <span class="badge text-bg-dark">Gender - {{gender}}</span>
+                    <span class="badge text-bg-dark">Age - {{age}}</span>
+                {{/each}}
+            </div>
+            {{/each}}
+          </div>
+        {{/each}}
+    </section>
+  </main>
+</div>
