@@ -1,0 +1,130 @@
+<main class='col-12'>
+  <section class='m-5'>
+    <div class='card'>
+      <div class='card-body'>
+        {{#with navigation}}
+          {{#each links}}
+            <a href='{{href}}'><button
+                type='button'
+                class='btn btn-link'
+              >{{text}}</button></a>
+          {{/each}}
+        {{/with}}
+      </div>
+    </div>
+  </section>
+  <section class='m-5'>
+    {{#with header}}
+      <h1>{{title}}</h1>
+      {{#with button}}
+        <a href='{{link}}'><button
+            type='button'
+            class='btn btn-outline-secondary'
+          >{{text}}</button></a>
+      {{/with}}
+    {{/with}}
+  </section>
+  <hr />
+  <section class='m-5'>
+    {{#each goodsBlock}}
+      <div class='card'>
+        <img src='{{image}}' class='card-img-top' />
+        <div class='card-body'>
+          <h5 class='card-title'>{{name}}</h5>
+          <p class='card-text'>{{description}}</p>
+          {{#with price}}
+            <p class='fs-5'>{{title}}</p>
+            <p class='fs-3'>{{value}}</p>
+          {{/with}}
+          <p class='fs-6'>{{amount}}</p>
+          {{#each buttons}}
+            {{#if isPrimary}}
+              <button
+                class='btn btn-primary'
+              >{{text}}</button>
+            {{/if}}
+            {{#if isDanger}}
+              <burron
+                class='btn btn-danger'
+              >{{text}}</burron>
+            {{/if}}
+          {{/each}}
+        </div>
+      </div>
+    {{/each}}
+  </section>
+  <hr />
+  <section class='m-5'>
+    {{#with total}}
+      <h2 class='text-dark'>{{title}}</h2>
+      <p class='fs-2 text-dark'>{{amount}}</p>
+      <p class='fs-6'>{{delivery}}</p>
+      {{#each buttons}}
+        {{#if isSuccess}}
+          <a href='{{link}}'><button
+              class='btn btn-success'
+            >{{text}}</button></a>
+        {{/if}}
+        {{#if isOutline}}
+          <a href='{{link}}'><button
+              class='btn btn-outline-success'
+            >{{text}}</button></a>
+        {{/if}}
+      {{/each}}
+    {{/with}}
+  </section>
+  <section class='m-5'>
+    {{#with goodsOtherBlock}}
+      <h1 class='title-dark'>{{title}}</h1>
+      {{#each cards}}
+        <div class='card'>
+          <img src='{{image}}' class='card-img-top' />
+          <div class='card-body'>
+            <p class='fs-2'>{{title}}</p>
+            <p class='fs-5'>{{description}}</p>
+            <div>
+              {{#if isHot}}
+                <button
+                  class='btn btn-danger rounded-pill'
+                >ТОП</button>
+              {{/if}}
+              {{#if idNew}}
+                <button
+                  class='btn btn-success rounded-pill'
+                >Новинка</button>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    {{/with}}
+  </section>
+  <hr />
+  <section class='m-5'>
+    <div class='col-5'>
+      {{#with subscribe}}
+        <h2 class='fs-2'>{{header}}</h2>
+        <p class='fs-5'>{{description}}</p>
+        {{#each buttons}}
+          <a href='{{link}}'><button
+              class='btn btn-primary'
+            >{{text}}</button></a>
+        {{/each}}
+      {{/with}}
+    </div>
+  </section>
+  <section>
+    {{#each footer}}
+            <div class="col-2 list-group">
+                <div class="nav flex-column">
+                    {{#each this}}
+                    <div class="nav-item mt-4">
+                        <a href="{{link}}" class="nav-link {{#if @last}}disabled{{/if}} list-item"
+                            target="_blank">{{text}}</a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{/each}}
+  </section>
+</main>
