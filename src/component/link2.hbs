@@ -1,0 +1,12 @@
+<div class='card'>
+  <div class='card-body'>
+    {{#with navigation}}
+      {{#each links}}
+        <a href='{{href}}'><button
+            type='button'
+            class='btn btn-link'
+          >{{text}}</button></a>
+      {{/each}}
+    {{/with}}
+  </div>
+</div>
